@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清碳-绿色低碳生活与可持续发展资源平台</title>
+    <meta name="description" content="清碳致力于提供全面的低碳生活指南、碳足迹计算工具、绿色出行方案及企业减碳咨询服务，帮助个人与企业实现可持续发展目标。">
+    <meta name="keywords" content="清碳,低碳生活,碳足迹,碳中和,绿色出行,节能减排">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-green: #2ecc71;
+            --dark-green: #27ae60;
+            --light-green: #eafaf1;
+            --text-main: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-body: #f9fbfd;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-green);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-green);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--dark-green);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light-green) 0%, #d4efdf 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--dark-green);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--dark-green);
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .tool-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+
+        .tool-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .tool-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .tool-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            border: 1px solid var(--primary-green);
+            color: var(--primary-green);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .tool-btn:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        /* Guide List */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .guide-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+        }
+
+        .guide-img {
+            width: 200px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .guide-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .guide-tag {
+            display: inline-block;
+            background-color: var(--light-green);
+            color: var(--dark-green);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .guide-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .guide-content p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: var(--primary-green);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .sidebar {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-green);
+        }
+
+        .checklist li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .checklist li::before {
+            content: '✓';
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--white);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            border: 1px solid #eee;
+            border-radius: var(--radius);
+            padding: 20px;
+        }
+
+        .faq-item h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13px;
+            color: #95a5a6;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-img {
+                width: 100%;
+                height: 200px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+                清碳<span>Life</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#tools">减碳工具</a>
+                <a href="#guides">生活指南</a>
+                <a href="#topics">热门话题</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#" class="cta-btn">立即计算碳足迹</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>从微小改变开始，拥抱绿色未来</h1>
+                <p>清碳致力于为您提供科学的碳足迹计算方法、实用的低碳生活建议以及企业减碳方案，让环保变得简单可行。</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>10万+</h3>
+                        <p>用户参与计算</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>减碳生活指南</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1000t</h3>
+                        <p>累计减少碳排放</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools">
+            <div class="container">
+                <div class="section-header">
+                    <h2>实用减碳工具</h2>
+                    <p>通过科学的数据监测，量化您的环境影响，找到减排的关键点。</p>
+                </div>
+                <div class="tools-grid">
+                    <article class="tool-card">
+                        <div class="tool-icon">🌱</div>
+                        <h3>个人碳足迹计算器</h3>
+                        <p>输入您的出行、饮食和消费数据，快速生成年度碳排报告，并获得个性化减排建议。</p>
+                        <a href="#" class="tool-btn">开始计算</a>
+                    </article>
+                    <article class="tool-card">
+                        <div class="tool-icon">🚲</div>
+                        <h3>绿色出行规划</h3>
+                        <p>基于距离和碳排放量，为您推荐最优的低碳出行方案（步行、骑行、公共交通）。</p>
+                        <a href="#" class="tool-btn">查看路线</a>
+                    </article>
+                    <article class="tool-card">
+                        <div class="tool-icon">🏠</div>
+                        <h3>家庭节能诊断</h3>
+                        <p>评估家庭能源使用效率，提供照明、电器和供暖系统的节能改造建议。</p>
+                        <a href="#" class="tool-btn">进行诊断</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guides & Sidebar Section -->
+        <section id="guides">
+            <div class="container">
+                <div class="section-header">
+                    <h2>低碳生活指南</h2>
+                    <p>实用的生活技巧与案例分析，帮助您轻松融入环保生活。</p>
+                </div>
+                <div class="guide-layout">
+                    <div class="guide-list">
+                        <article class="guide-item">
+                            <img src="https://picsum.photos/seed/food/400/250" alt="低碳饮食" class="guide-img">
+                            <div class="guide-content">
+                                <span class="guide-tag">饮食篇</span>
+                                <h3>如何通过饮食减少碳足迹？</h3>
+                                <p>减少红肉摄入、多吃本地时令蔬菜、减少食物浪费，这不仅能改善健康，还能显著降低碳排放。</p>
+                                <a href="#" class="read-more">阅读全文 &rarr;</a>
+                            </div>
+                        </article>
+                        <article class="guide-item">
+                            <img src="https://picsum.photos/seed/home/400/250" alt="家居节能" class="guide-img">
+                            <div class="guide-content">
+                                <span class="guide-tag">家居篇</span>
+                                <h3>低成本家庭节能改造清单</h3>
+                                <p>更换LED灯泡、使用节能电器、合理调节空调温度。本文为您盘点十大最有效的家庭节能小技巧。</p>
+                                <a href="#" class="read-more">阅读全文 &rarr;</a>
+                            </div>
+                        </article>
+                        <article class="guide-item">
+                            <img src="https://picsum.photos/seed/waste/400/250" alt="垃圾分类" class="guide-img">
+                            <div class="guide-content">
+                                <span class="guide-tag">回收篇</span>
+                                <h3>垃圾分类全攻略：让资源循环</h3>
+                                <p>了解干湿分离的重要性，掌握可回收物与有害垃圾的正确投放方法，为资源循环利用打下基础。</p>
+                                <a href="#" class="read-more">阅读全文 &rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                    <aside class="sidebar">
+                        <h3>新手必看清单</h3>
+                        <ul class="checklist">
+                            <li>制定家庭节能减排计划</li>
+                            <li>逐步淘汰高能耗家电</li>
+                            <li>养成随手关灯关水的习惯</li>
+                            <li>优先选择公共交通出行</li>
+                            <li>参与社区植树或清洁活动</li>
+                            <li>减少一次性塑料制品使用</li>
+                        </ul>
+                        <div style="margin-top: 30px; text-align: center;">
+                            <a href="#" class="cta-btn" style="width: 100%; display: block; text-align: center;">下载电子手册</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于“清碳”与低碳生活的常见疑问。</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>什么是个人碳足迹？</h4>
+                        <p>个人碳足迹是指个人生活直接或间接产生的温室气体排放总量，通常以二氧化碳当量（CO₂e）表示。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>低碳生活真的能减少碳排放吗？</h4>
+                        <p>是的。虽然个人行为看似微不足道，但若数亿人同时改变，累积的减排效果将是巨大的，对全球气候有积极影响。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>企业如何实现碳中和？</h4>
+                        <p>企业通常通过能源结构转型、提高能效、购买碳信用或植树造林等方式来抵消自身的碳排放。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>计算碳足迹需要提供隐私信息吗？</h4>
+                        <p>我们的计算器仅用于统计和生成报告，不会收集您的个人身份信息，数据仅用于改善算法和统计。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color: white; margin-bottom: 20px; display: inline-block;">
+                        清碳<span>Life</span>
+                    </a>
+                    <p style="font-size: 14px; color: #bdc3c7; line-height: 1.8;">
+                        清碳致力于推动绿色生活方式的普及，连接每一个关心地球未来的个体，共同守护我们的家园。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>核心服务</h4>
+                    <ul>
+                        <li><a href="#">碳足迹计算</a></li>
+                        <li><a href="#">绿色出行</a></li>
+                        <li><a href="#">企业咨询</a></li>
+                        <li><a href="#">节能改造</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源中心</h4>
+                    <ul>
+                        <li><a href="#">低碳生活百科</a></li>
+                        <li><a href="#">政策法规解读</a></li>
+                        <li><a href="#">环保活动日历</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">环保公益论坛</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 清碳 Life. All rights reserved. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+      </html>
