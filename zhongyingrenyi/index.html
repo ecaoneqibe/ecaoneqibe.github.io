@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="中影人艺考网提供专业的影视传媒类艺考培训，包括播音主持、编导制作、表演、摄影摄像等艺术类专业。提供艺考政策解析、名校录取数据、考前集训营及一对一艺考规划服务。">
+    <meta name="keywords" content="中影人艺考,艺考培训,播音主持艺考,编导制作艺考,表演艺考,影视传媒艺考">
+    <title>中影人艺考-专业影视传媒类艺考培训与名校升学服务</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --primary-dark: #b71c1c;
+            --secondary-color: #f5f5f5;
+            --text-main: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-phone {
+            color: var(--text-light);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: var(--white);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: var(--radius);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        /* Feature Tabs */
+        .features-section {
+            padding: 60px 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(211, 47, 47, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Majors Section */
+        .majors-section {
+            padding: 80px 0;
+            background: var(--secondary-color);
+        }
+
+        .majors-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .major-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .major-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .major-img {
+            height: 180px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        .major-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .major-item:hover .major-img img {
+            transform: scale(1.05);
+        }
+
+        .major-info {
+            padding: 20px;
+        }
+
+        .major-info h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .major-info p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Enrollment Process */
+        .process-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: #eee;
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .step-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .step-item p {
+            color: var(--text-light);
+            font-size: 14px;
+            padding: 0 10px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .btn-white:hover {
+            background: #f0f0f0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            display: none;
+            padding-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h4 {
+            color: var(--white);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-info p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer-col h5 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .majors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+            .hero-text h1 {
+                font-size: 32px;
+            }
+            .majors-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .process-steps::before {
+                width: 2px;
+                height: auto;
+                left: 50%;
+                top: 0;
+                bottom: 0;
+                transform: translateX(-50%);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            中影人艺考
+            <span>专业艺考培训</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">专业介绍</a></li>
+                <li><a href="#">名校录取</a></li>
+                <li><a href="#">师资力量</a></li>
+                <li><a href="#">在线咨询</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="tel:400-888-8888" class="btn-phone">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                </svg>
+                400-888-8888
+            </a>
+            <a href="#" class="btn-primary">免费预约测评</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>成就你的传媒艺术梦想</h1>
+                <p>专注影视传媒类艺考培训十年，依托中影集团资源，为播音、编导、表演、摄影等专业的学子提供从测评到名校录取的一站式服务。</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>名校录取率</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10+</h3>
+                        <p>合作名校</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>20k+</h3>
+                        <p>输送学员</p>
+                    </div>
+                </div>
+                <a href="#" class="btn-primary" style="background: white; color: var(--primary-color);">查看录取喜报</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://picsum.photos/seed/cinema/600/400" alt="艺考培训场景">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>为什么选择中影人艺考</h2>
+                <p>我们不仅教授技巧，更注重培养艺术素养，助力学员实现名校梦想</p>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">★</div>
+                    <h3>集团师资力量</h3>
+                    <p>依托中影集团背景，拥有来自北京电影学院、中国传媒大学等顶尖院校的资深教授和行业导师。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>精准测评规划</h3>
+                    <p>入学前进行专业能力测评，结合学员自身特点与目标院校，量身定制备考方案。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>小班精英教学</h3>
+                    <p>坚持小班制教学，确保每位学员都能得到老师的充分关注与针对性指导。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>全真模拟考</h3>
+                    <p>定期举办全真模拟考试，邀请名校考官点评，提前适应考试节奏，提升应试能力。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Majors Section -->
+    <section class="majors-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>开设专业一览</h2>
+                <p>全方位覆盖影视传媒类热门艺考专业</p>
+            </div>
+            <div class="majors-grid">
+                <div class="major-item">
+                    <div class="major-img">
+                        <img src="https://picsum.photos/seed/broadcast/400/300" alt="播音主持专业">
+                    </div>
+                    <div class="major-info">
+                        <h3>播音主持</h3>
+                        <p>普通话水平测试 | 朗诵 | 播音技巧 | 节目主持</p>
+                    </div>
+                </div>
+                <div class="major-item">
+                    <div class="major-img">
+                        <img src="https://picsum.photos/seed/film/400/300" alt="编导制作专业">
+                    </div>
+                    <div class="major-info">
+                        <h3>编导制作</h3>
+                        <p>故事创作 | 影视评论 | 导演基础 | 摄影摄像</p>
+                    </div>
+                </div>
+                <div class="major-item">
+                    <div class="major-img">
+                        <img src="https://picsum.photos/seed/actor/400/300" alt="表演专业">
+                    </div>
+                    <div class="major-info">
+                        <h3>表演专业</h3>
+                        <p>台词 | 形体 | 声乐 | 表演基础 | 即兴表演</p>
+                    </div>
+                </div>
+                <div class="major-item">
+                    <div class="major-img">
+                        <img src="https://picsum.photos/seed/photo/400/300" alt="摄影摄像专业">
+                    </div>
+                    <div class="major-info">
+                        <h3>摄影摄像</h3>
+                        <p>摄影基础 | 构图 | 灯光 | 后期剪辑 | 艺术理论</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>艺考备考流程</h2>
+                <p>科学规划，步步为营，助你顺利通关</p>
+            </div>
+            <div class="process-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>专业测评</h3>
+                    <p>入学前进行专业能力评估，确定适合的专业方向和提升空间。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>基础集训</h3>
+                    <p>系统学习专业理论，夯实基础，掌握核心考试技巧。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>强化提升</h3>
+                    <p>针对薄弱环节进行强化训练，结合名校真题进行模拟演练。</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>考前冲刺</h3>
+                    <p>考前心理辅导、全真模拟考试及名校考官现场指导。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>立即开启你的名校之路</h2>
+            <p>现在预约测评，即可获得免费艺考规划方案及历年真题资料包</p>
+            <a href="#" class="btn-white">立即预约测评</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">艺考生的文化课要求是多少？</div>
+                    <div class="faq-answer">
+                        <p>不同院校、不同专业对文化课的要求差异较大。一般一本院校对文化课要求在350分以上，二本院校在300分左右。中影人艺考会根据学员文化课情况，协助制定冲刺策略。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">零基础可以报名吗？</div>
+                    <div class="faq-answer">
+                        <p>完全可以。我们的课程体系从零基础开始，循序渐进。无论是否有艺术基础，只要对传媒艺术有兴趣，都可以通过系统培训达到合格水平。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">集训期间住宿和生活怎么安排？</div>
+                    <div class="faq-answer">
+                        <p>学校提供舒适的宿舍环境，配备空调、热水等设施。食堂提供营养均衡的餐饮服务，确保学员在集训期间能够安心学习，专心备考。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h4>中影人艺考</h4>
+                <p>专注影视传媒类艺考培训十年，依托中影集团资源，致力于为全国艺术考生提供最专业、最权威的考前培训服务。</p>
+                <p>地址：北京市朝阳区影视产业园</p>
+                <p>电话：400-888-8888</p>
+            </div>
+            <div class="footer-col">
+                <h5>关于我们</h5>
+                <ul>
+                    <li><a href="#">学校简介</a></li>
+                    <li><a href="#">师资团队</a></li>
+                    <li><a href="#">校园环境</a></li>
+                    <li><a href="#">加入我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>专业课程</h5>
+                <ul>
+                    <li><a href="#">播音主持</a></li>
+                    <li><a href="#">编导制作</a></li>
+                    <li><a href="#">表演专业</a></li>
+                    <li><a href="#">摄影摄像</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>帮助中心</h5>
+                <ul>
+                    <li><a href="#">艺考政策</a></li>
+                    <li><a href="#">录取查询</a></li>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">在线留言</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 中影人艺考 版权所有 | 京ICP备12345678号</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // FAQ Toggle Logic
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const parent = item.parentElement;
+            const wasActive = parent.classList.contains('active');
+            
+            // Close all others
+            document.querySelectorAll('.faq-item').forEach(child => {
+                child.classList.remove('active');
+            });
+
+            // Toggle current
+            if (!wasActive) {
+                parent.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+                                              </html>
