@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="忍者神龟:脱影而出 官方资料与游戏攻略站。包含角色介绍、技能解析、游戏流程详解及通关技巧。">
+    <meta name="keywords" content="忍者神龟:脱影而出,忍者神龟,动作游戏,游戏攻略,角色介绍,游戏秘籍">
+    <title>忍者神龟:脱影而出-动作冒险与游戏攻略指南</title>
+    <style>
+        :root {
+            --primary: #00a8ff;
+            --secondary: #fbc531;
+            --dark: #2f3640;
+            --darker: #1e272e;
+            --text: #dcdde1;
+            --card-bg: #353b48;
+            --border: #7f8fa6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--darker);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--dark);
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 39, 46, 0.8), rgba(30, 39, 46, 0.8)), 
+                        url('https://picsum.photos/seed/ninja/1920/600') center/cover no-repeat;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #0097e6;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .section-title {
+            border-left: 5px solid var(--secondary);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        /* Character Grid */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-color: var(--secondary);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #2f3640;
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-title {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: var(--dark);
+            color: var(--primary);
+            margin-right: 5px;
+        }
+
+        /* Guide List */
+        .guide-list article {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .guide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-title {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .guide-meta {
+            font-size: 0.85rem;
+            color: #7f8fa6;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-box {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .sidebar-box h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--dark);
+            padding-bottom: 0.5rem;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background-color: var(--dark);
+            color: var(--secondary);
+            text-align: center;
+            line-height: 24px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background-color: #e74c3c; }
+        .rank-list li:nth-child(2) .rank-num { background-color: #f39c12; }
+        .rank-list li:nth-child(3) .rank-num { background-color: #27ae60; }
+
+        /* FAQ */
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        .faq-answer {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #bdc3c7;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1rem;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            color: #7f8fa6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">忍者神龟<span>:脱影而出</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#characters">角色图鉴</a></li>
+                <li><a href="#guides">攻略指南</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>踏入黑暗，守护纽约</h1>
+    <p>在《忍者神龟:脱影而出》中，四位英雄将面临前所未有的挑战。探索经典街机玩法与全新机制的结合，重温那段热血沸腾的冒险时光。</p>
+    <div>
+        <button class="btn">查看角色</button>
+        <button class="btn btn-outline">阅读攻略</button>
+    </div>
+</section>
+
+<div class="container">
+    <main class="main-content">
+        <!-- Characters Section -->
+        <section id="characters">
+            <h2 class="section-title">英雄集结</h2>
+            <div class="character-grid">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/raphael/400/300" alt="拉斐尔" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">拉斐尔</h3>
+                        <p class="card-text">愤怒与力量的化身。擅长双刀格斗，拥有极高的攻击力和破坏力，是团队中的近战输出核心。</p>
+                        <div>
+                            <span class="tag">近战</span>
+                            <span class="tag">高攻</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/leonardo/400/300" alt="莱昂纳多" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">莱昂纳多</h3>
+                        <p class="card-text">团队的领袖与纪律守护者。使用武士刀，注重战术配合，拥有稳定的防御能力和团队增益技能。</p>
+                        <div>
+                            <span class="tag">平衡</span>
+                            <span class="tag">领袖</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/donatello/400/300" alt="多纳泰罗" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">多纳泰罗</h3>
+                        <p class="card-text">科技天才。使用长棍，擅长远程攻击、破解电子锁和制造陷阱，是解谜的关键人物。</p>
+                        <div>
+                            <span class="tag">远程</span>
+                            <span class="tag">科技</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/michelangelo/400/300" alt="米开朗基罗" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">米开朗基罗</h3>
+                        <p class="card-text">充满活力与幽默感。使用双截棍，攻击速度快，擅长连击和快速移动，是节奏把控的高手。</p>
+                        <div>
+                            <span class="tag">速度</span>
+                            <span class="tag">连击</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Guides Section -->
+        <section id="guides">
+            <h2 class="section-title">通关指南</h2>
+            <div class="guide-list">
+                <article>
+                    <div class="guide-header">
+                        <h3 class="guide-title">新手入门：基础操作与连招技巧</h3>
+                        <span class="guide-meta">2023-10-15</span>
+                    </div>
+                    <p>在《忍者神龟:脱影而出》中，掌握基础攻击和跳跃是生存的关键。拉斐尔的重斩可以击飞敌人，而米开朗基罗的快速移动则能躲避密集弹幕。建议新手先熟悉每个角色的核心技能树，再尝试高难度的连招。</p>
+                </article>
+
+                <article>
+                    <div class="guide-header">
+                        <h3 class="guide-title">BOSS战攻略：史莱德首领弱点分析</h3>
+                        <span class="guide-meta">2023-10-18</span>
+                    </div>
+                    <p>面对史莱德时，利用多纳泰罗的激光炮可以破坏其护盾。当史莱德进入狂暴状态后，莱昂纳多的“狮心斩”是打断其施法循环的最佳手段。记得在战斗中寻找场景中的隐藏补给箱。</p>
+                </article>
+
+                <article>
+                    <div class="guide-header">
+                        <h3 class="guide-title">隐藏道具收集全攻略</h3>
+                        <span class="guide-meta">2023-10-20</span>
+                    </div>
+                    <p>游戏中散落着大量的忍者硬币和升级芯片。多纳泰罗的角色在开启宝箱时效率最高。在下水道关卡，墙壁上的壁画往往隐藏着通往隐藏关卡的入口。</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <aside class="sidebar">
+        <!-- Hot Characters -->
+        <div class="sidebar-box">
+            <h3>热门角色排行</h3>
+            <ul class="rank-list">
+                <li><span class="rank-num">1</span> 拉斐尔 - 暴力美学</li>
+                <li><span class="rank-num">2</span> 莱昂纳多 - 团队核心</li>
+                <li><span class="rank-num">3</span> 米开朗基罗 - 连击大师</li>
+                <li><span class="rank-num">4</span> 多纳泰罗 - 科技先锋</li>
+            </ul>
+        </div>
+
+        <!-- Tips -->
+        <div class="sidebar-box">
+            <h3>游戏小贴士</h3>
+            <ul class="rank-list">
+                <li>合理切换角色应对不同敌人。</li>
+                <li>收集能量块强化武器等级。</li>
+                <li>与爱普莉尔配合可触发合击技。</li>
+            </ul>
+        </div>
+
+        <!-- FAQ -->
+        <div class="sidebar-box" id="faq">
+            <h3>常见问题 (FAQ)</h3>
+            <div class="faq-item">
+                <div class="faq-question">游戏支持多人联机吗？</div>
+                <div class="faq-answer">是的，游戏支持本地双人合作模式，支持线上联机。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何解锁隐藏结局？</div>
+                <div class="faq-answer">需要收集全图鉴的忍者硬币，并在最终关卡选择正确的对话选项。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">支持哪些平台？</div>
+                <div class="faq-answer">目前支持PC、PlayStation 5、Xbox Series X/S及Nintendo Switch。</div>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <p>&copy; 2023 忍者神龟:脱影而出 攻略站. 本站为非官方粉丝站点，仅提供游戏资讯与攻略服务。</p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<script>
+    // FAQ Accordion Logic
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const parent = item.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>
