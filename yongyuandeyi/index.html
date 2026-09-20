@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="永远的伊苏2怀旧站提供经典动作RPG《伊苏2》的图文攻略、BOSS弱点分析、全宝箱收集指南及怀旧版本下载资讯，助你重温亚特鲁的冒险之旅。">
+    <meta name="keywords" content="永远的伊苏2, 伊苏2攻略, 亚特鲁, 动作RPG, 怀旧游戏">
+    <title>永远的伊苏2-经典动作RPG图文攻略与怀旧指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #fbc02d;
+            --bg-dark: #1a1a1a;
+            --bg-card: #2c2c2c;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        nav a.active {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDQwaDQwVjBIMHY0MHptMjAtMjBoMjB2MjBIMjBWMjB6TTAgMjBoMjB2MjBIMFYyMHoiIGZpbGw9IiMzMzMiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9nPjwvc3ZnPg==');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--text-main);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        /* Game Intro Grid */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-text h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .intro-text p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        .intro-image {
+            width: 100%;
+            height: 300px;
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: var(--text-muted);
+            border: 1px dashed #444;
+        }
+
+        /* Guide Tabs */
+        .guide-container {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .tabs {
+            display: flex;
+            background-color: #222;
+            border-bottom: 1px solid #444;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            background-color: transparent;
+            color: var(--text-muted);
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            background-color: #333;
+        }
+
+        .tab-btn.active {
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            background-color: #2a2a2a;
+        }
+
+        .tab-content {
+            padding: 30px;
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .guide-list {
+            list-style: none;
+        }
+
+        .guide-list li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #444;
+        }
+
+        .guide-list li:last-child {
+            border-bottom: none;
+        }
+
+        .guide-list h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .guide-list p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .guide-list a {
+            color: var(--primary-color);
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .guide-list a::after {
+            content: '→';
+            margin-left: 5px;
+            font-size: 12px;
+        }
+
+        /* Boss Section */
+        .boss-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .boss-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            border: 1px solid #333;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .boss-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+
+        .boss-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .boss-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .boss-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .boss-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: rgba(211, 47, 47, 0.2);
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-question:hover {
+            background-color: #333;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+            display: none;
+            border-top: 1px solid #444;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 40px 0 20px;
+            border-top: 1px solid #333;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-image {
+                height: 200px;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                text-align: left;
+                border-bottom: 1px solid #444;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">伊苏<span>2</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#intro">游戏介绍</a></li>
+                <li><a href="#guide">图文攻略</a></li>
+                <li><a href="#boss">BOSS攻略</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>永远的伊苏2</h1>
+            <p>重温2000年的经典之作，体验亚特鲁·克里斯汀的冒险传奇。掌握战斗技巧，收集宝物，击败古拉姆族，拯救贝雷特村。</p>
+            <a href="#guide" class="btn">开始冒险</a>
+        </div>
+    </section>
+
+    <!-- Game Intro -->
+    <section id="intro" class="container">
+        <div class="section-title">
+            <h2>游戏简介</h2>
+        </div>
+        <div class="intro-grid">
+            <div class="intro-text">
+                <h3>重返旧世界</h3>
+                <p>《永远的伊苏2》是Falcom公司推出的经典动作RPG游戏，被誉为“动作RPG的巅峰之作”。故事讲述了冒险家亚特鲁·克里斯汀与伙伴多奇在亚特鲁王国的冒险旅程。游戏以流畅的动作手感、紧凑的关卡设计和丰富的解谜要素著称。</p>
+                <h3>游戏特色</h3>
+                <p>游戏采用了独特的“回旋斩”技能，允许玩家在空中进行攻击，极大地丰富了战斗策略。同时，游戏中包含了大量的宝箱、隐藏通道和需要特定道具才能进入的区域，鼓励玩家进行细致的探索。</p>
+            </div>
+            <div class="intro-image">
+                🏰
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Tabs -->
+    <section id="guide" class="container">
+        <div class="section-title">
+            <h2>图文攻略</h2>
+        </div>
+        <div class="guide-container">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'start')">新手入门</button>
+                <button class="tab-btn" onclick="openTab(event, 'items')">道具与装备</button>
+                <button class="tab-btn" onclick="openTab(event, 'skills')">技能与魔法</button>
+            </div>
+            
+            <div id="start" class="tab-content active">
+                <ul class="guide-list">
+                    <li>
+                        <h4>初始战斗技巧</h4>
+                        <p>游戏初期主要依赖普通攻击。在敌人发动攻击前，利用“闪避”键躲避伤害，随后进行反击。不要贪刀，连续攻击容易被敌人打断。</p>
+                        <a href="#">查看详细战斗教程</a>
+                    </li>
+                    <li>
+                        <h4>迷宫探索要点</h4>
+                        <p>迷宫设计错综复杂，请善用地图功能。寻找带有问号的宝箱通常是获取关键道具（如钥匙）的最佳途径。注意观察墙壁上的裂缝，有时隐藏着捷径。</p>
+                        <a href="#">查看迷宫地图解析</a>
+                    </li>
+                    <li>
+                        <h4>剧情流程指引</h4>
+                        <p>跟随主线任务推进，不要在早期迷宫停留过久。在前往下一个区域前，尽量在当前区域探索至完全探索状态，避免后期重复跑图。</p>
+                        <a href="#">查看完整流程攻略</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="items" class="tab-content">
+                <ul class="guide-list">
+                    <li>
+                        <h4>关键道具获取</h4>
+                        <p>游戏中需要通过解谜和战斗获取多种钥匙（如木箱钥匙、金箱钥匙）。部分钥匙需要特定的魔法道具才能开启对应的门。</p>
+                        <a href="#">查看道具图鉴</a>
+                    </li>
+                    <li>
+                        <h4>装备强化系统</h4>
+                        <p>虽然本作没有复杂的锻造系统，但通过宝箱获得的装备属性各异。记得定期更换更强的武器和防具，特别是面对BOSS战时。</p>
+                        <a href="#">查看装备推荐</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="skills" class="tab-content">
+                <ul class="guide-list">
+                    <li>
+                        <h4>回旋斩的使用</h4>
+                        <p>这是亚特鲁的核心技能。在跳跃过程中按下攻击键，可以释放回旋斩。此技能可以攻击空中的敌人或切断远处的藤蔓。</p>
+                        <a href="#">查看技能连招教学</a>
+                    </li>
+                    <li>
+                        <h4>魔法药水</h4>
+                        <p>魔法药水是恢复生命值的关键资源。在进入大型迷宫前，务必确保携带足够的药水。部分宝箱中包含强力药水。</p>
+                        <a href="#">查看药水获取路线</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boss Guide -->
+    <section id="boss" class="container">
+        <div class="section-title">
+            <h2>BOSS 攻略</h2>
+        </div>
+        <div class="boss-grid">
+            <div class="boss-card">
+                <span class="boss-icon">👹</span>
+                <h3>古拉姆族长</h3>
+                <p>位于伊苏王城深处。攻击前摇较长，注意观察其动作。推荐使用回旋斩打断其施法，保持距离进行风筝。</p>
+                <span class="boss-tag">弱点：斩击</span>
+            </div>
+            <div class="boss-card">
+                <span class="boss-icon">🐍</span>
+                <h3>黑蛇卡伊</h3>
+                <p>拥有极高攻击速度和范围攻击。当它吐信时迅速躲避，并利用墙壁反弹跳跃进行反击。</p>
+                <span class="boss-tag">弱点：火属性</span>
+            </div>
+            <div class="boss-card">
+                <span class="boss-icon">🦇</span>
+                <h3>库雷姆兽</h3>
+                <p>在空中盘旋攻击。需要预判落点，利用跳跃攻击将其击落。注意其撞击地面产生的冲击波。</p>
+                <span class="boss-tag">弱点：物理攻击</span>
+            </div>
+            <div class="boss-card">
+                <span class="boss-icon">🐉</span>
+                <h3>库雷姆王</h3>
+                <p>最终BOSS。拥有多种远程和近战攻击。保持移动，不要贪刀。利用场景中的障碍物躲避全屏大招。</p>
+                <span class="boss-tag">策略：耐心与闪避</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="container">
+        <div class="section-title">
+            <h2>常见问题 (FAQ)</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">游戏可以在现代电脑上运行吗？</div>
+                <div class="faq-answer">是的，通过使用模拟器（如Mednafen或BizHawk）以及原版游戏ROM，可以在现代Windows、macOS或Linux系统上流畅运行。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何获得全收集成就？</div>
+                <div class="faq-answer">全收集需要探索迷宫中的每一个角落，开启所有宝箱，并击败隐藏的敌人。建议参考详细的地图攻略进行游戏。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">回旋斩在哪里学习？</div>
+                <div class="faq-answer">回旋斩是亚特鲁的初始技能，无需学习。在跳跃状态下按下攻击键即可释放。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">游戏没有存档功能吗？</div>
+                <div class="faq-answer">原版游戏没有自动存档，需要手动寻找存档点或使用模拟器的存档功能。请确保在进入重要BOSS前存档。</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p style="color: #777; font-size: 14px; line-height: 1.8;">
+                    本站致力于提供《永远的伊苏2》的怀旧攻略与资源整理，为玩家提供纯净的游戏体验。所有游戏版权归Falcom及相关发行方所有。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#intro">游戏介绍</a></li>
+                    <li><a href="#guide">图文攻略</a></li>
+                    <li><a href="#boss">BOSS攻略</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>友情链接</h4>
+                <ul>
+                    <li><a href="#">Falcom 官网</a></li>
+                    <li><a href="#">伊苏系列维基</a></li>
+                    <li><a href="#">模拟器资源</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 永远的伊苏2怀旧站. All rights reserved. 本站内容仅供学习交流使用.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Tab Switching Logic
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        setTimeout(() => {
+            document.getElementById(tabName).classList.add("active");
+        }, 10);
+        evt.currentTarget.className += " active";
+    }
+
+    // FAQ Accordion Logic
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', () => {
+            const parent = item.parentElement;
+            const isActive = parent.classList.contains('active');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(child => {
+                child.classList.remove('active');
+            });
+
+            // Toggle current
+            if (!isActive) {
+                parent.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
