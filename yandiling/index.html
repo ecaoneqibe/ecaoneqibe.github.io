@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炎帝陵-中华始祖祭祀圣地与文化旅游指南</title>
+    <meta name="description" content="炎帝陵官方首页，介绍中华民族始祖炎帝神农氏的生平事迹、陵寝建筑特色、祭祀文化历史及湖南株洲炎陵县旅游攻略。提供寻根祭祖、参观导览与历史文化深度解读。">
+    <meta name="keywords" content="炎帝陵, 神农氏, 中华始祖, 寻根祭祖, 炎陵旅游, 祭祀大典, 神农文化">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --accent-color: #F4A460;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #F9F7F2;
+            --white: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/seed/yan-dilin-hero/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Introduction */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .intro-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .intro-text p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .intro-img img {
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Historical Cards */
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 200px;
+            width: 100%;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .card-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Ritual Section */
+        .ritual-section {
+            background-color: #FFF8F0;
+        }
+
+        .ritual-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ritual-steps {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .step-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Map/Location */
+        .location-box {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .location-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .location-map {
+            flex: 1;
+            min-width: 300px;
+            height: 350px;
+            background-color: #eee;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-container { flex-direction: column; height: auto; padding: 15px 0; }
+            nav ul { margin-top: 15px; gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .intro-grid { grid-template-columns: 1fr; }
+            .ritual-steps { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <span>🔥</span> 炎帝陵
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#history">历史渊源</a></li>
+                    <li><a href="#ritual">祭祀文化</a></li>
+                    <li><a href="#tour">旅游指南</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <a href="#tour" class="cta-btn">预约参观</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>华夏始祖，万世景仰</h1>
+                <p>炎帝陵坐落于湖南省株洲市炎陵县，是海内外炎黄子孙寻根祭祖、拜谒始祖的圣地，承载着中华民族五千年的文明记忆。</p>
+                <a href="#history" class="cta-btn" style="background-color: var(--white); color: var(--primary-color);">探索历史</a>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="section container">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <h3>炎帝神农氏：农耕文明的开启者</h3>
+                    <p>炎帝神农氏是中华民族的始祖之一，与黄帝轩辕氏并称为“炎黄子孙”。他尝百草、制耒耜、兴稼穑，为人类生存与发展奠定了坚实基础。</p>
+                    <p>炎帝陵不仅是历史遗迹，更是中华民族精神的象征。千百年来，无数海内外华人在此举行盛大的公祭仪式，传承中华孝道与民族凝聚力。</p>
+                    <p>这里山水相依，古木参天，是集历史文化、生态旅游、宗亲联谊于一体的国家级风景名胜区。</p>
+                </div>
+                <div class="intro-img">
+                    <img src="https://picsum.photos/seed/yan-dilin-intro/600/400.jpg" alt="炎帝陵全景图">
+                </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section id="history" class="section" style="background-color: var(--white);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>历史沿革</h2>
+                    <p>历经沧桑，古冢重光</p>
+                </div>
+                <div class="history-grid">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/yan-history1/400/250.jpg" alt="唐代始建" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">唐代始建</h3>
+                            <p class="card-text">据史书记载，唐贞观年间（公元627-649年），官方开始在此建庙奉祀，奠定了炎帝陵的祭祀基础。</p>
+                            <a href="#" class="card-link">阅读更多 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/yan-history2/400/250.jpg" alt="明代重建" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">明代重建</h3>
+                            <p class="card-text">明成化年间，朝廷拨专款对炎帝陵进行了大规模的修缮和扩建，使其规模达到鼎盛，成为湘东名胜。</p>
+                            <a href="#" class="card-link">阅读更多 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/yan-history3/400/250.jpg" alt="现代修缮" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">现代修缮</h3>
+                            <p class="card-text">近年来，炎帝陵景区进行了全面的保护性开发，复原了奉圣寺、洗药池等历史遗迹，展现了新的风貌。</p>
+                            <a href="#" class="card-link">阅读更多 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ritual Section -->
+        <section id="ritual" class="section ritual-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>祭祀文化</h2>
+                    <p>公祭炎帝神农氏典礼</p>
+                </div>
+                <div class="ritual-container">
+                    <p style="max-width: 800px; text-align: center; color: var(--text-light);">
+                        炎帝陵祭祀活动始于唐代，延绵至今从未间断，已成为中华民族重要的文化符号。每年的公祭大典严格按照国家非物质文化遗产标准举行，场面庄严肃穆，程序严谨规范。
+                    </p>
+                    <div class="ritual-steps">
+                        <div class="step-item">
+                            <div class="step-icon">🧭</div>
+                            <h4 class="step-title">迎神</h4>
+                            <p class="step-desc">乐舞告祭，恭请炎帝神灵降临。</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-icon">🧹</div>
+                            <h4 class="step-title">净手</h4>
+                            <p class="step-desc">净手焚香，表达对始祖的崇敬。</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-icon">🙏</div>
+                            <h4 class="step-title">三献礼</h4>
+                            <p class="step-desc">初献、亚献、终献，敬献贡品。</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-icon">📜</div>
+                            <h4 class="step-title">读祭文</h4>
+                            <p class="step-desc">宣读祭文，颂扬始祖功德。</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-icon">🚩</div>
+                            <h4 class="step-title">送神</h4>
+                            <p class="step-desc">恭送神灵回銮，仪式圆满结束。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tour Section -->
+        <section id="tour" class="section container">
+            <div class="section-title">
+                <h2>旅游指南</h2>
+                <p>游览线路与实用信息</p>
+            </div>
+            <div class="location-box">
+                <div class="location-info">
+                    <h3>景区简介</h3>
+                    <p style="margin-bottom: 20px; color: var(--text-light);">
+                        炎帝陵景区位于湖南省株洲市炎陵县鹿原陂，距株洲市区约80公里。景区内古木参天，溪水潺潺，主要景点包括神农大殿、御碑园、龙丘石、洗药池、得乐殿等。
+                    </p>
+                    <div class="info-item">
+                        <strong>开放时间：</strong>
+                        <span>8:00 - 17:30 (16:00停止入园)</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>门票价格：</strong>
+                        <span>80元/人 (仅供参考，请以官方为准)</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>建议游玩时长：</strong>
+                        <span>3-4小时</span>
+                    </div>
+                    <a href="#" class="cta-btn" style="display: inline-block; text-align: center;">查看实时地图</a>
+                </div>
+                <div class="location-map">
+                    <img src="https://picsum.photos/seed/map-placeholder/600/400.jpg" alt="炎帝陵景区地图示意图" style="width:100%; height:100%; object-fit: cover; opacity: 0.8;">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>炎帝陵景区</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        中华民族始祖炎帝神农氏的安寝之地，全球华人寻根祭祖的圣地。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">景区公告</a></li>
+                        <li><a href="#">交通指南</a></li>
+                        <li><a href="#">票务预订</a></li>
+                        <li><a href="#">游客服务</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：0731-12345678</li>
+                        <li>地址：湖南省株洲市炎陵县鹿原镇</li>
+                        <li>邮箱：contact@yan-dilin.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 炎帝陵文化旅游区 版权所有 | 湘ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
