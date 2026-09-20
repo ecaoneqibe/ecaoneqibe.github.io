@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狼友之家-精品社区与互动交流平台</title>
+    <meta name="description" content="狼友之家是一个专注于成人社交、内容分享与互动交流的在线社区。提供友好的交流环境、丰富的分类内容以及便捷的互动功能，致力于打造高质量的线上社交体验。">
+    <meta name="keywords" content="狼友之家, 社区, 交流, 社交, 互动, 精品">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c0392b;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 50px;
+            padding: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .search-box button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: var(--container-width);
+            margin: 32px auto;
+            padding: 0 var(--spacing);
+            display: grid;
+            grid-template-columns: 240px 1fr 280px;
+            gap: 24px;
+            flex: 1;
+        }
+
+        /* Sidebar Left */
+        .sidebar-left {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .category-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+            border-left: 3px solid var(--accent-color);
+            padding-left: 8px;
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        .category-list a {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding: 4px 0;
+        }
+
+        .category-list a:hover {
+            color: var(--accent-color);
+            padding-left: 4px;
+        }
+
+        /* Main Content */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .post-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 140px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .post-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .post-tag {
+            background: #f0f2f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        /* Sidebar Right */
+        .sidebar-right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .rank-list {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background: #eee;
+            color: #666;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+
+        .rank-item:nth-child(1) .rank-num { background: #ffd700; color: #fff; }
+        .rank-item:nth-child(2) .rank-num { background: #c0c0c0; color: #fff; }
+        .rank-item:nth-child(3) .rank-num { background: #cd7f32; color: #fff; }
+
+        .rank-title {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .rank-hot {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+        }
+
+        .notice-box {
+            background: #fff3cd;
+            color: #856404;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar-left, .sidebar-right {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-container {
+                padding: 0 12px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-layout {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                狼友<span>之家</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">热门推荐</a></li>
+                    <li><a href="#">最新动态</a></li>
+                    <li><a href="#">社区专区</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>发现更多精彩内容</h1>
+            <p>狼友之家为您提供安全、舒适的互动交流空间，汇聚海量优质资源与活跃用户。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索感兴趣的内容...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar-left">
+            <div class="category-card">
+                <h3 class="category-title">内容分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">综合资讯</a></li>
+                    <li><a href="#">图文分享</a></li>
+                    <li><a href="#">视频专区</a></li>
+                    <li><a href="#">生活随笔</a></li>
+                    <li><a href="#">经验交流</a></li>
+                    <li><a href="#">情感话题</a></li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <h3 class="category-title">热门话题</h3>
+                <ul class="category-list">
+                    <li><a href="#">本周热议</a></li>
+                    <li><a href="#">新人报到</a></li>
+                    <li><a href="#">资源分享</a></li>
+                    <li><a href="#">规则说明</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">最新动态</h2>
+                    <a href="#" style="font-size: 0.9rem; color: var(--accent-color);">查看更多 &rarr;</a>
+                </div>
+                <div class="grid-layout">
+                    <!-- Article Card 1 -->
+                    <article class="post-card">
+                        <img src="https://picsum.photos/seed/1/300/200" alt="Post Image" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title"><a href="#">关于社区规范与用户守则的详细解读</a></h3>
+                            <div class="post-meta">
+                                <span class="post-tag">社区公告</span>
+                                <span>2小时前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Article Card 2 -->
+                    <article class="post-card">
+                        <img src="https://picsum.photos/seed/2/300/200" alt="Post Image" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title"><a href="#">新手指南：如何快速融入狼友之家</a></h3>
+                            <div class="post-meta">
+                                <span class="post-tag">新手必读</span>
+                                <span>5小时前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Article Card 3 -->
+                    <article class="post-card">
+                        <img src="https://picsum.photos/seed/3/300/200" alt="Post Image" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title"><a href="#">精选：本周热门互动话题汇总</a></h3>
+                            <div class="post-meta">
+                                <span class="post-tag">热门话题</span>
+                                <span>昨天</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Article Card 4 -->
+                    <article class="post-card">
+                        <img src="https://picsum.photos/seed/4/300/200" alt="Post Image" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title"><a href="#">技术支持：常见问题解答与反馈</a></h3>
+                            <div class="post-meta">
+                                <span class="post-tag">帮助中心</span>
+                                <span>昨天</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Article Card 5 -->
+                    <article class="post-card">
+                        <img src="https://picsum.photos/seed/5/300/200" alt="Post Image" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title"><a href="#">优质内容创作者招募计划开启</a></h3>
+                            <div class="post-meta">
+                                <span class="post-tag">活动</span>
+                                <span>3天前</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Article Card 6 -->
+                    <article class="post-card">
+                        <img src="https://picsum.photos/seed/6/300/200" alt="Post Image" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title"><a href="#">版本更新日志：优化体验与安全</a></h3>
+                            <div class="post-meta">
+                                <span class="post-tag">系统更新</span>
+                                <span>3天前</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar-right">
+            <div class="rank-list">
+                <h3 class="category-title">热门排行</h3>
+                <div class="rank-item">
+                    <span class="rank-num">1</span>
+                    <span class="rank-title">如何正确使用社区功能</span>
+                    <span class="rank-hot">🔥</span>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-num">2</span>
+                    <span class="rank-title">新人注册流程详解</span>
+                    <span class="rank-hot">🔥</span>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-num">3</span>
+                    <span class="rank-title">会员权益说明</span>
+                    <span class="rank-hot">🔥</span>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-num">4</span>
+                    <span class="rank-title">内容审核标准</span>
+                </div>
+                <div class="rank-item">
+                    <span class="rank-num">5</span>
+                    <span class="rank-title">隐私保护设置</span>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <h3 class="category-title">公告栏</h3>
+                <div class="notice-box">
+                    <strong>温馨提示：</strong><br>
+                    请大家遵守社区规则，文明发言。任何违规行为将受到相应处理。
+                </div>
+            </div>
+
+            <div class="category-card">
+                <h3 class="category-title">快速链接</h3>
+                <ul class="category-list">
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>狼友之家</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    致力于打造一个安全、真实、有趣的线上互动社区。在这里，您可以找到志同道合的朋友，分享生活点滴。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">热门推荐</a></li>
+                    <li><a href="#">社区公告</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>邮箱：support@langyou.com</li>
+                    <li>客服：24小时在线</li>
+                    <li>地址：互联网虚拟空间</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 狼友之家. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
